@@ -1,0 +1,77 @@
+# ============================================================
+# LungInsight AI — monorepo .gitignore
+# Covers LungInsight-AI, LungInsight-Backend, LungInsight-Frontend,
+# lunginsight-rag
+# ============================================================
+
+# ---- Secrets — never commit these, in any folder ----
+.env
+*/.env
+**/.env
+!.env.example
+!**/.env.example
+
+# ---- Python (Backend, AI, RAG) ----
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+.venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---- Node / Frontend ----
+node_modules/
+dist/
+dist-ssr/
+*.local
+coverage/
+
+# ---- Trained model artifacts (AI module) ----
+# Excluded on purpose -- large binary files don't belong in git.
+# See LungInsight-AI/MODEL.md for how to obtain/regenerate best.pt.
+LungInsight-AI/checkpoints/*
+!LungInsight-AI/checkpoints/.gitkeep
+LungInsight-AI/outputs/*
+!LungInsight-AI/outputs/.gitkeep
+
+# ---- Datasets (AI module) ----
+# Excluded on purpose -- see LungInsight-AI/DATASET.md for setup
+# instructions (Kaggle chest-xray-pneumonia dataset).
+LungInsight-AI/datasets/**/*.jpg
+LungInsight-AI/datasets/**/*.jpeg
+LungInsight-AI/datasets/**/*.png
+LungInsight-AI/datasets/**/*.bmp
+!LungInsight-AI/datasets/**/.gitkeep
+
+# ---- Backend uploads (user-submitted, never committed) ----
+LungInsight-Backend/uploads/*
+!LungInsight-Backend/uploads/.gitkeep
+
+# ---- Heatmap outputs (regenerated at inference time) ----
+LungInsight-AI/service/outputs/
+*_overlay.png
+*_heatmap.png
+*_sidebyside.png
+test_heatmap.png
+
+# ---- RAG vector index (rebuilt automatically on first run) ----
+lunginsight-rag/storage/vector_index/*
+!lunginsight-rag/storage/vector_index/.gitkeep
+
+# ---- Database ----
+*.db
+*.sqlite3
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ---- Misc local-only files ----
+*.log

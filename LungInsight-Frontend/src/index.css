@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color tokens: "clinical lightbox" system ----
+     Grounded in radiology film viewing: a lit viewbox (light background)
+     holding dark film. Cyan = the illuminated/active state. Brick-red is
+     reserved exclusively for pneumonia-positive flags -- never used for
+     generic UI accents, so it keeps its meaning. */
+  --color-lightbox: #f4f6fa;
+  --color-lightbox-dim: #e8ecf3;
+  --color-panel: #ffffff;
+  --color-ink: #16233d;
+  --color-steel: #5c6b85;
+  --color-steel-light: #94a1b8;
+  --color-line: #dde3ee;
+
+  --color-cyan-50: #e6f6f8;
+  --color-cyan-100: #bfe9ed;
+  --color-cyan-400: #17a8bd;
+  --color-cyan-500: #0891a8;
+  --color-cyan-600: #06748a;
+  --color-cyan-700: #055a6b;
+
+  --color-flag-50: #fbeae8;
+  --color-flag-400: #c8564a;
+  --color-flag-500: #b8433a;
+  --color-flag-600: #96342c;
+
+  --color-amber-400: #d99a3b;
+  --color-amber-500: #c17f22;
+
+  /* ---- Type tokens ---- */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-lightbox);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan-500);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Signature "viewbox" frame: thin double-rule border with corner ticks,
+     used on the heatmap viewer, prediction card, and upload dropzone. */
+  .viewbox-frame {
+    position: relative;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-panel);
+  }
+
+  .viewbox-frame::before,
+  .viewbox-frame::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+  }
+
+  .viewbox-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid var(--color-cyan-500);
+    border-left: 2px solid var(--color-cyan-500);
+  }
+
+  .viewbox-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid var(--color-cyan-500);
+    border-right: 2px solid var(--color-cyan-500);
+  }
+
+  .viewbox-frame--flag::before,
+  .viewbox-frame--flag::after {
+    border-color: var(--color-flag-500);
+  }
+}

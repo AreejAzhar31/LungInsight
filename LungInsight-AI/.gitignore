@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Data & artifacts (keep folder structure, ignore contents)
+**/datasets/train/*/*
+**/datasets/validation/*/*
+**/datasets/test/*/*
+!**/datasets/**/.gitkeep
+
+**/checkpoints/*.pt
+**/logs/
+**/outputs/*
+!**/outputs/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Test cache
+.pytest_cache/
+
+training_log.txt
+
+**/.env

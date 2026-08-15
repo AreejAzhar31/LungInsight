@@ -1,0 +1,55 @@
+{
+  "sources": [
+    {
+      "document_id": "who-lung-overview-001",
+      "file": "who_lung_cancer_overview.md",
+      "title": "Lung Cancer Overview",
+      "organization": "World Health Organization (WHO)",
+      "topic": "overview",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/cancer",
+      "trust_tier": "authoritative_public_health_body",
+      "retrieved_date": "2026-01-15"
+    },
+    {
+      "document_id": "cdc-lung-riskfactors-001",
+      "file": "cdc_lung_cancer_risk_factors.md",
+      "title": "Lung Cancer Risk Factors",
+      "organization": "Centers for Disease Control and Prevention (CDC)",
+      "topic": "risk_factors",
+      "source_url": "https://www.cdc.gov/cancer/lung/",
+      "trust_tier": "authoritative_public_health_body",
+      "retrieved_date": "2026-01-15"
+    },
+    {
+      "document_id": "nih-lung-screening-001",
+      "file": "nih_lung_cancer_screening.md",
+      "title": "Lung Cancer Screening Guidance",
+      "organization": "National Institutes of Health (NIH) / National Cancer Institute",
+      "topic": "screening",
+      "source_url": "https://www.cancer.gov/types/lung/patient/lung-screening-pdq",
+      "trust_tier": "authoritative_public_health_body",
+      "retrieved_date": "2026-01-15"
+    },
+    {
+      "document_id": "who-symptoms-diagnosis-001",
+      "file": "who_symptoms_and_diagnosis.md",
+      "title": "Lung Cancer Symptoms and Diagnostic Pathway",
+      "organization": "World Health Organization (WHO)",
+      "topic": "symptoms_diagnosis",
+      "source_url": "https://www.who.int/health-topics/cancer",
+      "trust_tier": "authoritative_public_health_body",
+      "retrieved_date": "2026-01-15"
+    },
+    {
+      "document_id": "cdc-lung-treatment-001",
+      "file": "cdc_treatment_overview.md",
+      "title": "Lung Cancer Treatment Overview",
+      "organization": "Centers for Disease Control and Prevention (CDC)",
+      "topic": "treatment",
+      "source_url": "https://www.cdc.gov/cancer/lung/basic_info/treatment.htm",
+      "trust_tier": "authoritative_public_health_body",
+      "retrieved_date": "2026-01-15"
+    }
+  ],
+  "note": "Content in knowledge_base/raw/ is paraphrased/adapted for demonstration purposes and must be replaced with vetted, properly licensed source text before any clinical or production use. Replace file contents with verified excerpts (with permission/licensing confirmed) or link out to canonical URLs at answer time."
+}
